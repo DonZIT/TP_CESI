@@ -22,13 +22,14 @@ class ProductFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         for ($i = 0; $i < 10; $i++) {
-            $this->createProduct($manager);
+            $product = $this->createProduct($manager);
+            $this->setReference('prod-' . $i, $product);
         }
 
         $manager->flush();
     }
 
-    private function createProduct(ObjectManager $manager): void
+    private function createProduct(ObjectManager $manager): Product
     {
         $product = new Product();
         $product->setName($this->faker->word);
@@ -44,5 +45,7 @@ class ProductFixtures extends Fixture
         $product->setCategories($category);
 
         $manager->persist($product);
+
+        return $product;
     }
 }

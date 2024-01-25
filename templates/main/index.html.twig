@@ -15,6 +15,12 @@
 				<a href="{{ path('shop_index') }}" class="btn btn-primary">Visitez notre boutique</a>
 			</div>
 
+			{% for category in categories %}
+				<div class="col-12">
+					{{category.name}}
+				</div>
+			{% endfor %}
+
 			<div
 				class="col-lg-6">
 				<img src="path_to_your_image.jpg" class="img-fluid" alt="Image de produits industriels">
