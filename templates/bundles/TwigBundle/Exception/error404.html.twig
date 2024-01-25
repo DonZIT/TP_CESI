@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page non trouvée
+{% endblock %}
+
+{% block body %}
+	<div class="container text-center mt-5">
+		<h1 class="display-1 font-weight-bold">404</h1>
+		<p class="h2 mb-3">Oups! Page non trouvée.</p>
+		<p class="lead">
+			Nous ne pouvons pas trouver la page que vous cherchez. Retour à la
+			<a href="{{ path('app_main') }}" class="btn btn-primary">page d'accueil</a>.
+		</p>
+	</div>
+{% endblock %}

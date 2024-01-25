@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accès refusé
+{% endblock %}
+
+{% block body %}
+	<div class="container text-center mt-5">
+		<h1 class="display-1 font-weight-bold">403</h1>
+		<p class="h2 mb-3">Accès refusé</p>
+		<p class="lead">
+			Désolé, vous n'avez pas la permission d'accéder à cette page.
+		</p>
+		<a href="{{ path('app_main') }}" class="btn btn-primary mt-4">Retour à la page d'accueil</a>
+	</div>
+{% endblock %}

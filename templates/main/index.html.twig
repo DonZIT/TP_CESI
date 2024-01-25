@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acceuil - InCesissable
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<div
+			class="row align-items-center">
+			<div class="col-lg-6">
+				<h1>Bienvenue chez InCesissable</h1>
+				<p class="lead">
+					Votre partenaire de confiance pour tous vos besoins en produits industriels. Fournisseur de qualité, desservant toute la France.
+				</p>
+				<a href="{{ path('shop_index') }}" class="btn btn-primary">Visitez notre boutique</a>
+			</div>
+
+			<div
+				class="col-lg-6">
+				<img src="path_to_your_image.jpg" class="img-fluid" alt="Image de produits industriels">
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
