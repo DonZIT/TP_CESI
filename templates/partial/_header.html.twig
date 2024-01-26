@@ -1,38 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
-	<a class="navbar-brand" href="{{ path('app_main') }}">
-		Accueil
-	</a>
-
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<div class="collapse navbar-collapse" id="navbarNav">
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item mx-2">
-				<a class="nav-link" href="{{ path('shop_index') }}">Boutique</a>
-			</li>
-
-			{% if app.user %}
-				<li class="nav-item mx-2">
-					<a class="nav-link" href="{{ path('profile_index') }}">Profil</a>
+<nav class="navbar navbar-expand-lg">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="{{ path('app_main') }}">
+			<img src="{{ asset('assets/image/logo.png') }}" alt="Logo Inicesable" width="80" height="80">
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link active" href="{{ path('shop_index') }}">Boutique</a>
 				</li>
-				<li>Vous êtes connecté en tant que
-					{{ app.user.userIdentifier }}
-				</li>
-				<li>
-					<form action="{{ path('connexion_logout') }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir vous deconnecter ?');" class="d-inline">
-						<button type="submit" class="btn btn-danger btn-sm">Se deconnecter</button>
-					</form>
-				</li>
-			{% else %}
-				<li class="nav-item mx-2">
-					<a class="nav-link" href="{{ path('connexion_login') }}">Se connecter</a>
-				</li>
-				<li class="nav-item mx-2">
-					<a class="nav-link" href="{{ path('connexion_register') }}">S'inscrire</a>
-				</li>
-			{% endif %}
-		</ul>
+			</ul>
+			<ul class="navbar-nav ms-auto">
+				{% if app.user %}
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('profile_index') }}">Profil</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('admin_user_index') }}">Administration</a>
+					</li>
+					<li class="nav-item">
+						<form action="{{ path('connexion_logout') }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir vous déconnecter ?');">
+							<button type="submit" class="btn btn-outline-danger">Se déconnecter</button>
+						</form>
+					</li>
+				{% else %}
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('connexion_login') }}">Se connecter</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('connexion_register') }}">S'inscrire</a>
+					</li>
+				{% endif %}
+			</ul>
+		</div>
 	</div>
 </nav>

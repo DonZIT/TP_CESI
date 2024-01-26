@@ -1,0 +1,29 @@
+<section class="latest-orders mt-5">
+	<div class="container">
+		<h2 class="h3 text-center mb-4">Vos dernières commandes</h2>
+
+		{% if user.getOrders() is null or user.getOrders()|length == 0 %}
+			<div class="alert alert-info" role="alert">
+				Vous n'avez pas encore passé de commandes.
+			</div>
+		{% else %}
+			<div class="row">
+				{% for order in user.getOrders()|slice(0, 3) %}
+					<div class="col-md-4 mb-3">
+						<div class="card">
+							<img src="{{ order.product.imagePath }}" class="card-img-top" alt="Image du produit">
+							<div class="card-body">
+								<h5 class="card-title">{{ order.product.name }}</h5>
+								<p class="card-text">{{ order.product.description }}</p>
+								<p class="card-text">Quantité :
+									{{ order.quantity }}</p>
+								<p class="card-text">Prix :
+									{{ order.totalPrice }}</p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+</section>

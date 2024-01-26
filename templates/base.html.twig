@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			{% block title %}Welcome!
+			{% block title %}Bonjour
 			{% endblock %}
 		</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,8 @@
 	</head>
 	<body>
 		{% include "partial/_header.html.twig" %}
-		<div class="container"> {% block body %}{% endblock %}
-			</div>
-		</body>
-	</html>
+		<div>
+			{% block body %}{% endblock %}
+		</div>
+	</body>
+</html>

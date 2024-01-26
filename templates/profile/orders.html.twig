@@ -1,13 +1,36 @@
-{% extends 'base.html.twig' %}
+{% extends 'profile/profile_base.html.twig' %}
 
-{% block title %}Commandes de
+{% block title %}Commande utilisateur
 {% endblock %}
 
-{% block body %}
-
+{% block profile_content %}
 	<div>
-		<h1>
-			Vos commandes
-		</h1>
+		<h1 class="py-4">Vos commandes</h1>
+		{% if user.getOrders() is null or user.getOrders()|length == 0 %}
+			<div class="alert alert-info" role="alert">
+				Vous n'avez pas encore passé de commandes.
+			</div>
+		{% else %}
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Produit</th>
+						<th scope="col">Description</th>
+						<th scope="col">Quantité</th>
+						<th scope="col">Prix</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for order in user.getOrders() %}
+						<tr>
+							<td>{{ order.product.name }}</td>
+							<td>{{ order.product.description }}</td>
+							<td>{{ order.quantity }}</td>
+							<td>{{ order.totalPrice }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		{% endif %}
 	</div>
 {% endblock %}

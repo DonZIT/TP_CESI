@@ -1,0 +1,46 @@
+<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+	<div class="card h-100">
+		<div class="card-body">
+			<div class="row gutters">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					<h6 class="mb-2 text-primary">Détails personnels</h6>
+				</div>
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+					<div class="form-group">
+						<label for="fullName">Nom complet</label>
+						<input type="text" class="form-control" id="fullName" placeholder="Entrez le nom complet" value="{{ user.getFullName() }}">
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+					<div class="form-group">
+						<label for="eMail">Email</label>
+						<input type="email" class="form-control" id="eMail" placeholder="Entrez l'email" value="{{ user.email }}">
+					</div>
+				</div>
+			</div>
+			<div class="row gutters">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					{% if user.getAddress() %}
+						<h6 class="mt-3 mb-2 text-primary">Adresse</h6>
+						<div class="form-group">
+							<label for="adresse">Adresse</label>
+							<input type="text" class="form-control" id="address" placeholder="Votre adresse" value="{{ user.getAdress() }}">
+						</div>
+					{% else %}
+
+						<h6 class="mt-3 mb-2 text-primary">Vous n'avez pas ajouté d'adresse</h6>
+
+					{% endif %}
+				</div>
+			</div>
+			<div class="row gutters">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					<div class="text-right">
+						<button type="button" id="cancel" name="cancel" class="btn btn-secondary">Annuler</button>
+						<button type="button" id="submit" name="submit" class="btn btn-primary">Mettre à jour</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

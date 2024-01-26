@@ -1,0 +1,20 @@
+<aside class="profile-sidebar">
+	<nav class="nav flex-column">
+		<h2 class="h4 px-3 pt-3 mb-3">Votre compte</h2>
+		<ul class="nav flex-column px-3 mb-3">
+			<li class="nav-item">
+				<a class="nav-link active" href="{{ path('profile_index') }}">Mon profil</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ path('profile_orders') }}">Mes commandes</a>
+			</li>
+		</ul>
+
+		<h3 class="h5 px-3 mb-3">Gérer mon profil</h3>
+		<ul class="nav flex-column px-3 mb-0">
+			<li class="nav-item">
+				<a class="nav-link" href="{{ path('profile_edit', {'id': user.id}) }}">Modifier mon profil</a>
+			</li>
+		</ul>
+	</nav>
+</aside>

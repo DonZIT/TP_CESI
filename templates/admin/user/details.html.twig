@@ -1,5 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/admin_base.html.twig' %}
 
 {% block title %}
-	Détail utilisateur '....'
+	Détail utilisateur
+	{{user.id}}
+{% endblock %}
+
+{% block admin_content %}
+	<div class="">
+		<h1>Administration des utilisateurs</h1>
+	</div>
 {% endblock %}
