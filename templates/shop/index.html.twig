@@ -10,12 +10,8 @@
 			{% for product in products %}
 				<div class="col-md-4 mb-3">
 					<div class="card">
-						{% if product.images|length > 0 %}
-							{% set image = product.images|first %}
-							<img src="{{ asset('assets/image/' ~ image.name) }}" class="card-img-top" alt="{{ product.name }}">
-						{% else %}
-							<img src="{{ asset('assets/image/chapeau.jpeg') }}" class="card-img-top" alt="Default Image">
-						{% endif %}
+						<img src="{{ asset('assets/image/chapeau.jpeg') }}" class="card-img-top" alt="Default Image">
+
 						<div class="card-body">
 							<h5 class="card-title">{{ product.name }}</h5>
 							<p class="card-text">{{ product.description }}</p>
